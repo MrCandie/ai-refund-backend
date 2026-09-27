@@ -10,7 +10,7 @@ Backend API for an AI-enabled customer support refund system. The API receives r
 - Mongoose
 - OpenAI API
 - Axios
-- JavaScript/TypeScript
+- JavaScript
 - Docker
 
 ## Getting Started
@@ -27,8 +27,8 @@ Backend API for an AI-enabled customer support refund system. The API receives r
 Clone the repository:
 
 ```bash
-git clone <backend-repository-url>
-cd <backend-directory>
+git clone https://github.com/MrCandie/ai-refund-backend
+cd ai-refund-backend
 ```
 
 Install dependencies:
@@ -41,7 +41,7 @@ Create a `.env` file in the root directory:
 
 ```env
 PORT=8080
-MONGO_URI=mongodb://localhost:27017/refund_system
+DATABASE=your_mongoose_uri
 OPENAI_API_KEY=your_openai_api_key
 ```
 
@@ -71,7 +71,7 @@ A `.env.example` file is provided as a reference:
 
 ```env
 PORT=8080
-MONGO_URI=mongodb://localhost:27017/refund_system
+DATABASE=
 OPENAI_API_KEY=
 ```
 
@@ -80,7 +80,7 @@ OPENAI_API_KEY=
 ### Submit Refund Request
 
 ```http
-POST /api/v1/refunds
+POST /api/v1/request
 ```
 
 Example request:
@@ -115,7 +115,7 @@ escalated
 ### Refund Overview
 
 ```http
-GET /api/v1/refunds/overview
+GET /api/v1/request/overview
 ```
 
 Returns refund statistics and the most recent refund requests.
@@ -147,7 +147,7 @@ Returns refund requests with their associated customer and order information.
 ### Update Refund Request
 
 ```http
-PATCH /api/v1/refunds
+PATCH /api/v1/request/update
 ```
 
 Example:
